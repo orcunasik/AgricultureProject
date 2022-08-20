@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Agriculture.Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,17 @@ namespace Agriculture.WebUI.Controllers
 {
     public class DefaultController : Controller
     {
+        private readonly IServiceService _serviceService;
+
+        public DefaultController(IServiceService serviceService)
+        {
+            _serviceService = serviceService;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var result = _serviceService.GetListAll();
+            return View(result);
         }
     }
 }

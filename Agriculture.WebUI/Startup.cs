@@ -1,3 +1,8 @@
+using Agriculture.Business.Abstract;
+using Agriculture.Business.Concrete;
+using Agriculture.DataAccess.Abstract;
+using Agriculture.DataAccess.Concrete.EntityFramework;
+using Agriculture.DataAccess.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +28,9 @@ namespace Agriculture.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IServiceService, ServiceManager>();
+            services.AddScoped<IServiceDal, EfServiceDal>();
+            services.AddDbContext<AgricultureContext>();
             services.AddControllersWithViews();
         }
 

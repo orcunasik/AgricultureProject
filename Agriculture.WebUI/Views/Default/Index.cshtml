@@ -1,8 +1,24 @@
-﻿
+﻿@using Agriculture.Entities.Concrete
+@model List<Service>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Çalışan Listesi</h3>
+<h3>Hizmet Listesi</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ServiceId</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+        </tr>
+    }
+</table>
 
