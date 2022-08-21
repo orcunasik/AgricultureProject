@@ -43,9 +43,9 @@ namespace Agriculture.WebUI.Controllers
             }
             return View(serviceAddViewModel);
         }
-        public IActionResult DeleteService(Service service)
+        public IActionResult DeleteService(int id)
         {
-            var result = _serviceService.GetById(service.ServiceId);
+            var result = _serviceService.GetById(id);
             _serviceService.Delete(result);
             return RedirectToAction("Index");
         }
