@@ -1,4 +1,4 @@
-﻿@model Agriculture.Entities.Concrete.Service
+﻿@model Agriculture.WebUI.Models.ServiceAddViewModel
 @{
     ViewData["Title"] = "Yeni Hizmet Formu";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,10 +9,17 @@
 <div class="form-group">
     <form method="post">
         @Html.Label("Başlık")
+        <br />
+        <span asp-validation-for="Title" class="text-danger"></span>
         <input type="text" asp-for="Title" class="form-control" />
         <br />
         @Html.Label("Açıklama")
         <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        @Html.Label("Görsel")
+        <br />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
         <br />
         <button class="btn btn-outline-success">Kaydet</button>
 

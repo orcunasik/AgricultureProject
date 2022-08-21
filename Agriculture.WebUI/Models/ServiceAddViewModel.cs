@@ -10,7 +10,7 @@ namespace Agriculture.WebUI.Models
     {
         [Display(Name ="Başlık")]
         [Required(ErrorMessage ="Başlık Boş Geçilemez")]
-        public int Title { get; set; }
+        public string Title { get; set; }
 
         [Display(Name = "Açıklama")]
         public string Description { get; set; }

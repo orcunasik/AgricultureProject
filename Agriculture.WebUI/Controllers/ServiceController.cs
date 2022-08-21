@@ -1,5 +1,6 @@
 ﻿using Agriculture.Business.Abstract;
 using Agriculture.Entities.Concrete;
+using Agriculture.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,27 @@ namespace Agriculture.WebUI.Controllers
         [HttpGet]
         public IActionResult AddService()
         {
-            return View();
+            return View(new ServiceAddViewModel());
         }
         [HttpPost]
-        public IActionResult AddService(Service service)
+        public IActionResult AddService(ServiceAddViewModel serviceAddViewModel)
         {
-            _serviceService.Insert(service);
+            if (ModelState.IsValid)
+            {
+                _serviceService.Insert(new Service()
+                {
+                    Title = serviceAddViewModel.Title,
+                    Description = serviceAddViewModel.Description,
+                    ImageUrl = serviceAddViewModel.ImageUrl
+                });
+                return RedirectToAction("Index");
+            }
+            return View(serviceAddViewModel);
+        }
+        public IActionResult DeleteService(Service service)
+        {
+            var result = _serviceService.GetById(service.ServiceId);
+            _serviceService.Delete(result);
             return RedirectToAction("Index");
         }
     }
