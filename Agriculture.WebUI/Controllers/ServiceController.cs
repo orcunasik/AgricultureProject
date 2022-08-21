@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Agriculture.WebUI.Controllers
 {
-    public class DefaultController : Controller
+    public class ServiceController : Controller
     {
         private readonly IServiceService _serviceService;
 
-        public DefaultController(IServiceService serviceService)
+        public ServiceController(IServiceService serviceService)
         {
             _serviceService = serviceService;
         }
 
         public IActionResult Index()
         {
-            var result = _serviceService.GetListAll();
-            return View(result);
+            var serviceList = _serviceService.GetListAll();
+            return View(serviceList);
         }
     }
 }
