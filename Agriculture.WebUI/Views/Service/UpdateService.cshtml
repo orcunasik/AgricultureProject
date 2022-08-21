@@ -1,0 +1,27 @@
+﻿@model Agriculture.Entities.Concrete.Service
+@{
+    ViewData["Title"] = "UpdateService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Hizmet Güncelle</h4>
+<br />
+<div class="form-group">
+    <form method="post">
+        @Html.HiddenFor(s=>s.ServiceId)
+        @Html.Label("Başlık")
+        <br />
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        @Html.Label("Görsel")
+        <br />
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <button class="btn btn-outline-success">Kaydet</button>
+
+    </form>
+</div>
+

@@ -49,5 +49,17 @@ namespace Agriculture.WebUI.Controllers
             _serviceService.Delete(result);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult UpdateService(int id)
+        {
+            var result = _serviceService.GetById(id);
+            return View(result);
+        }
+        [HttpPost]
+        public IActionResult UpdateService(Service service)
+        {
+            _serviceService.Update(service);
+            return RedirectToAction("Index");
+        }
     }
 }
