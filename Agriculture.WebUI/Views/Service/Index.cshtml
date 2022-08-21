@@ -7,12 +7,13 @@
 
 <h4>Hizmetlerimiz</h4>
 <br />
-<button class="btn btn-outline-primary">Hizmet Ekle</button>
+<a href="/Service/AddService" class="btn btn-outline-primary">Hizmet Ekle</a>
 <table class="table table-bordered">
     <tr>
         <th>#</th>
         <th>Başlık</th>
         <th>Açıklama</th>
+        <th>Görsel</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -20,6 +21,7 @@
             <td>@item.ServiceId</td>
             <td>@item.Title</td>
             <td>@item.Description</td>
+            <td>@item.ImageUrl</td>
         </tr>
     }
 </table>

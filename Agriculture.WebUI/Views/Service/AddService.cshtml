@@ -1,0 +1,22 @@
+﻿@model Agriculture.Entities.Concrete.Service
+@{
+    ViewData["Title"] = "Yeni Hizmet Formu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Yeni Hizmet Oluştur</h4>
+<br />
+<div class="form-group">
+    <form method="post">
+        @Html.Label("Başlık")
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-outline-success">Kaydet</button>
+
+    </form>
+</div>
+
+

@@ -1,4 +1,5 @@
 ﻿using Agriculture.Business.Abstract;
+using Agriculture.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,17 @@ namespace Agriculture.WebUI.Controllers
         {
             var serviceList = _serviceService.GetListAll();
             return View(serviceList);
+        }
+        [HttpGet]
+        public IActionResult AddService()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddService(Service service)
+        {
+            _serviceService.Insert(service);
+            return RedirectToAction("Index");
         }
     }
 }
