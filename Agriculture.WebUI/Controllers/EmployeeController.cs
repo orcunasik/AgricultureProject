@@ -48,7 +48,8 @@ namespace Agriculture.WebUI.Controllers
         public IActionResult DeleteEmployee(int id)
         {
             var result = _employeeService.GetById(id);
-            return View(result);
+            _employeeService.Delete(result);
+            return RedirectToAction("Index");
         }
     }
 }
