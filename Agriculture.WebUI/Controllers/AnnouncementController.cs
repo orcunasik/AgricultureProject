@@ -78,5 +78,18 @@ namespace Agriculture.WebUI.Controllers
             _announcementService.Delete(result);
             return RedirectToAction("Index");
         }
+        public IActionResult ChangeStatus(int id)
+        {
+            if (_announcementService.GetById(id).Status == false)
+            {
+                _announcementService.AnnouncementStatus(id);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                _announcementService.AnnouncementStatus(id);
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

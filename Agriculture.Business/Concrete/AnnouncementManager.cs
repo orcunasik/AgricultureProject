@@ -18,6 +18,11 @@ namespace Agriculture.Business.Concrete
             _announcementDal = announcementDal;
         }
 
+        public void AnnouncementStatus(int id)
+        {
+            _announcementDal.AnnouncementStatus(id);
+        }
+
         public void Delete(Announcement announcement)
         {
             _announcementDal.Delete(announcement);

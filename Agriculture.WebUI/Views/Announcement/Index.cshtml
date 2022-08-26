@@ -20,7 +20,7 @@
                             <th>Tarih</th>
                             <th>Açıklamalar</th>
                             <th>Durumu</th>
-                            <th colspan="2">İşlemler</th>
+                            <th colspan="4">İşlemler</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,10 +33,11 @@
                                     <td>@announcementItem.ImageUrl</td>
                                     <td>@announcementItem.Title</td>
                                     <td>@announcementItem.Date</td>
-                                    <td>@announcementItem.Description</td>
                                     <td>@announcementItem.Status</td>
                                     <td><a href="/Announcement/DeleteAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Announcement/UpdateAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-success">Güncelle</a></td>
+                                    <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-success">Aktifleştir</a></td>
+                                    <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-dark">Pasifleştir</a></td>
+                                    <td><a href="/Announcement/UpdateAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-warning">Güncelle</a></td>
                                 </tr>
                                 i++;
                             }
