@@ -1,0 +1,48 @@
+﻿@model Agriculture.Entities.Concrete.Announcement
+@{
+    ViewData["Title"] = "Son Gelişmeleri Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Gelişme</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="announcementTitle"><strong>Başlık</strong></label>
+                    <br />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label for="announcementImageUrl"><strong>Görsel</strong></label>
+                    <br />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    <br />
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Görsel Adres">
+                </div>
+                <div class="form-group">
+                    <label for="announcementDescription"><strong>Açıklamalar</strong></label>
+                    <br />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <br />
+                    <textarea class="form-control" asp-for="Description" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="announcementDate"><strong>Tarih</strong></label>
+                    <br />
+                    <input type="date" class="form-control" asp-for="Date" placeholder="Tarih">
+                </div>
+                <div class="form-group">
+                    <label for="announcementStatus"><strong>Durumu</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Status" placeholder="Yayın Durumu">
+                </div>
+                <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
+                <a href="/Announcement/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
