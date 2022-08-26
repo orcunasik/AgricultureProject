@@ -58,8 +58,20 @@ namespace Agriculture.WebUI.Controllers
         [HttpPost]
         public IActionResult UpdateEmployee(Employee employee)
         {
-            _employeeService.Update(employee);
-            return RedirectToAction("Index");
+            ValidationResult result = employeeValidator.Validate(employee);
+            if (result.IsValid)
+            {
+                _employeeService.Update(employee);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public IActionResult DeleteEmployee(int id)
         {
