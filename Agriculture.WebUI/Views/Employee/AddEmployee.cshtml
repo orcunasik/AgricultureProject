@@ -11,20 +11,28 @@
                 <div class="form-group">
                     <label for="employeeFirstName"><strong>Adı</strong></label>
                     <br />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <br />
                     <input type="text" class="form-control" asp-for="FirstName" placeholder="Adınız">
                 </div>
                 <div class="form-group">
                     <label for="employeeLastName"><strong>Soyadı</strong></label>
+                    <br />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                     <br />
                     <input type="text" class="form-control" asp-for="LastName" placeholder="Soyadınız">
                 </div>
                 <div class="form-group">
                     <label for="employeeJob"><strong>Mesleği</strong></label>
                     <br />
+                    <span asp-validation-for="Job" class="text-danger"></span>
+                    <br />
                     <input type="text" class="form-control" asp-for="Job" placeholder="Mesleğiniz">
                 </div>
                 <div class="form-group">
                     <label for="employeeAvatar"><strong>AvatarUrl</strong></label>
+                    <br />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
                     <br />
                     <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Profil Resmi Ekleyiniz">
                 </div>

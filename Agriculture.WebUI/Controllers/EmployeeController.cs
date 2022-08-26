@@ -1,5 +1,7 @@
 ﻿using Agriculture.Business.Abstract;
+using Agriculture.Business.ValidationRules;
 using Agriculture.Entities.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ namespace Agriculture.WebUI.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
+        EmployeeValidator employeeValidator = new();
 
         public EmployeeController(IEmployeeService employeeService)
         {
@@ -30,8 +33,21 @@ namespace Agriculture.WebUI.Controllers
         [HttpPost]
         public IActionResult AddEmployee(Employee employee)
         {
-            _employeeService.Insert(employee);
-            return RedirectToAction("Index");
+            ValidationResult result = employeeValidator.Validate(employee);
+            if (result.IsValid)
+            {
+                _employeeService.Insert(employee);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+            
         }
         [HttpGet]
         public IActionResult UpdateEmployee(int id)
