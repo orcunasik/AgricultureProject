@@ -21,7 +21,7 @@ namespace Agriculture.Business.ValidationRules
             RuleFor(e => e.LastName).MinimumLength(2).WithMessage("Personel Soyadı En Az 2 Karakter Olmalıdır!");
             RuleFor(e => e.LastName).MaximumLength(25).WithMessage("Personel Soyadı En Fazla 25 Karakter Olmalıdır!");
             RuleFor(e => e.Job).MinimumLength(5).WithMessage("Meslek Alanı En Az 5 Karakter Olmalıdır!");
-            RuleFor(e => e.Job).MaximumLength(20).WithMessage("Meslek Alanı En Fazla 20 Karakter Olmalıdır!");
+            RuleFor(e => e.Job).MaximumLength(30).WithMessage("Meslek Alanı En Fazla 30 Karakter Olmalıdır!");
         }
     }
 }
