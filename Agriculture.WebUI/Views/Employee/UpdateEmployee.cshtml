@@ -8,7 +8,7 @@
         <div class="card-body">
             <h4 class="card-title">Personel Güncelleme Formu</h4>
             <form class="forms-sample" method="post">
-                @Html.HiddenFor(e => e.EmployeeId)
+                <input type="hidden" asp-for="EmployeeId" />
                 <div class="form-group">
                     <label for="employeeFirstName"><strong>Adı</strong></label>
                     <br />
