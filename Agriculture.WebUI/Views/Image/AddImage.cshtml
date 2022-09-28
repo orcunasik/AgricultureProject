@@ -1,0 +1,40 @@
+﻿@model Agriculture.Entities.Concrete.Image 
+
+@{
+    ViewData["Görsel Ekle"] = "AddImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Görsel Oluşturma</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="imageTitle"><strong>Başlık</strong></label>
+                    <br />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label for="imageImageUrl"><strong>Görsel Adresi</strong></label>
+                    <br />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    <br />
+                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Görsel Ekleyiniz">
+                </div>
+                <div class="form-group">
+                    <label for="imageDescription"><strong>Açıklama</strong></label>
+                    <br />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Description" placeholder="Açıklama">
+                </div>
+                <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
+                <a href="/Index/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
