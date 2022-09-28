@@ -1,7 +1,7 @@
 ﻿@model Agriculture.Entities.Concrete.Image 
 
 @{
-    ViewData["Görsel Ekle"] = "AddImage";
+    ViewData["Title"] = "Görsel Ekle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -32,7 +32,7 @@
                     <input type="text" class="form-control" asp-for="Description" placeholder="Açıklama">
                 </div>
                 <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
-                <a href="/Index/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
+                <a href="/Image/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
             </form>
         </div>
     </div>
