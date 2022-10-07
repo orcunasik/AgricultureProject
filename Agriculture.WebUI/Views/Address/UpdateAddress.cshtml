@@ -1,0 +1,44 @@
+﻿@model Agriculture.Entities.Concrete.Address
+@{
+    ViewData["Title"] = "Adres Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Güncelle</h4>
+            <form class="forms-sample" method="post">
+                <input type="hidden" asp-for="AddressId" />
+                <div class="form-group">
+                    <label for="addressDescription1"><strong>Adres Satırı1</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Description1" placeholder="Adres Satırı1">
+                </div>
+                <div class="form-group">
+                    <label for="addressDescription2"><strong>Adres Satırı2</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Description2" placeholder="Adres Satırı2">
+                </div>
+                <div class="form-group">
+                    <label for="addressDescription3"><strong>Adres Satırı3</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Description3" placeholder="Adres Satırı3">
+                </div>
+                <div class="form-group">
+                    <label for="addressDescription4"><strong>Adres Satırı4</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Description4" placeholder="Adres Satırı4">
+                </div>
+                <div class="form-group">
+                    <label for="addressMapInfo"><strong>Harita Konumu</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="MapInfo" placeholder="Konum Adresi">
+                </div>
+                <button type="submit" class="btn btn-outline-success mb-2">Güncelle</button>
+                <a href="/Address/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+

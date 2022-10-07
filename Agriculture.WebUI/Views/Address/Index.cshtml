@@ -1,0 +1,51 @@
+﻿@using Agriculture.Entities.Concrete
+@model List<Address>
+@{
+    ViewData["Title"] = "Adres Bilgisi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<span><a href="/Address/AddAddress/" class="btn btn-outline-primary">Yeni Adres</a></span>
+<br />
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Bilgisi</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Harita Bilgisi</th>
+                            <th>Adres Satırı1</th>
+                            <th>Adres Satırı2</th>
+                            <th>Adres Satırı3</th>
+                            <th>Adres Satırı4</th>
+                            <th colspan="2">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int i = 1;
+                            foreach (var addressItem in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@addressItem.MapInfo</td>
+                                    <td>@addressItem.Description1</td>
+                                    <td>@addressItem.Description2</td>
+                                    <td>@addressItem.Description3</td>
+                                    <td>@addressItem.Description4</td>
+                                    <td><a href="/Address/DeleteAddress/@addressItem.AddressId" class="btn btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Address/UpdateAddress/@addressItem.AddressId" class="btn btn-outline-warning">Güncelle</a></td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
