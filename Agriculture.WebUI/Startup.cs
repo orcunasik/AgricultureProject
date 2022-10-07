@@ -36,6 +36,8 @@ namespace Agriculture.WebUI
             services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
             services.AddScoped<IImageService, ImageManager>();
             services.AddScoped<IImageDal, EfImageDal>();
+            services.AddScoped<IAddressService, AddressManager>();
+            services.AddScoped<IAddressDal, EfAddressDal>();
             services.AddDbContext<AgricultureContext>();
             services.AddControllersWithViews();
         }
