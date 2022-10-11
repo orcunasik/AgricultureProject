@@ -1,0 +1,39 @@
+﻿@model Agriculture.Entities.Concrete.Contact
+@{
+    ViewData["Title"] = "Mesaj Detayları";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Detayları</h4>
+            <form class="forms-sample" method="post">
+                <input type="hidden" asp-for="ContactId" />
+                <div class="form-group">
+                    <label for="contactName"><strong>Gönderen</strong></label>
+                    <br />
+                    <input type="text" disabled class="form-control" asp-for="Name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail"><strong>Eposta Adresi</strong></label>
+                    <br />
+                    <input type="text" disabled class="form-control" asp-for="Email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage"><strong>Mesaj İçeriği</strong></label>
+                    <br />
+                    <textarea class="form-control" disabled cols="3" rows="10" asp-for="Message"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contactDate"><strong>Tarih</strong></label>
+                    <br />
+                    <input type="date" disabled class="form-control" asp-for="Date">
+                </div>
+                <a href="/Contact/DeleteMessage/@Model.ContactId" class="btn btn-outline-primary mb-2">Mesajı Sil</a>
+                <a href="/Contact/Index/" class="btn btn-outline-danger mb-2">Mesaj Listesi</a>
+            </form>
+        </div>
+    </div>
+</div>
+

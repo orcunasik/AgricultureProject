@@ -1,0 +1,45 @@
+﻿@using Agriculture.Entities.Concrete
+@model List<Contact>
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Listesi</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Gönderen</th>
+                            <th>Eposta Adresi</th>
+                            <th>Tarih</th>
+                            <th>Mesaj Detay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int i = 1;
+                            foreach (var contactItem in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@contactItem.Name</td>
+                                    <td>@contactItem.Email</td>
+                                    <td>@contactItem.Date.ToShortDateString().ToString()</td>
+                                    <td><a href="/Contact/MessageDetails/@contactItem.ContactId" class="btn btn-outline-primary">Mesajı Oku</a></td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
