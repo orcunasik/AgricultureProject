@@ -12,5 +12,8 @@ namespace Agriculture.Entities.Concrete
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public string DivClass1 { get; set; }
+        public string DivClass2 { get; set; }
+        
     }
 }
