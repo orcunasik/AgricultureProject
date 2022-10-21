@@ -1,0 +1,20 @@
+﻿@model Agriculture.Entities.Concrete.Contact
+
+<div class="col-md-9 contact-middle">
+    <h2>Bize İletin</h2>
+    <form action="/Default/_SendMessage" method="post">
+        <div class="form-agileinfo">
+            <p>Adınız</p>
+            <input type="text" class="form-control-sm" asp-for="Name" placeholder="Adınız" required="" />
+            <p>Eposta</p>
+            <input type="text" class="form-control-sm" asp-for="Email" placeholder="Eposta" required="" />
+        </div>
+        <div class="form-agileits-w3layouts">
+            <p>Mesajınız</p>
+            <textarea class="form-control-sm" asp-for="Message" placeholder="Mesajınız" required=""></textarea>
+            <input type="submit" value="Gönder" />
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+
