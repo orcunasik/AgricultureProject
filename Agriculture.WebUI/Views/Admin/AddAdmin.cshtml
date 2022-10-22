@@ -1,0 +1,28 @@
+﻿@model Agriculture.Entities.Concrete.Admin
+@{
+    ViewData["Title"] = "Yeni Yönetici Oluştur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Yönetici Oluşturun</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="adminUserName"><strong>Kullanıcı Adı</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı Adınız">
+                </div>
+                <div class="form-group">
+                    <label for="admin"><strong>Parola</strong></label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="Password" placeholder="Parola">
+                </div>
+                <button type="submit" class="btn btn-outline-success mb-2">Kaydet</button>
+                <a href="/Admin/Index/" class="btn btn-outline-danger mb-2">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+

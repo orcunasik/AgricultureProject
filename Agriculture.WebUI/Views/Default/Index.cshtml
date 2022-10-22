@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("Head")
+<body>
+    <div class="header">
+        <div class="container">
+            @await Component.InvokeAsync("TopAddress")
+            <div class="w3l_header_right">
+                <div class="w3ls-social-icons text-left">
+                    @await Component.InvokeAsync("SocialMedia")
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("Navbar")
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+        <!-- Modal1 -->
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>In Harvest</h4>
+                    <img src="images/banner1.jpg" alt=" " class="img-responsive">
+                    <h5>ENVIRONMENT & SUSTAINABILITY</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("About")
+    @await Component.InvokeAsync("Service")
+    @await Component.InvokeAsync("Employee")
+    @await Component.InvokeAsync("AnnouncementPart1")
+    @await Component.InvokeAsync("Galery")
+    <!--footer-->
+    <div class="contact-agile" id="contact">
+        <div class="container">
+            <h3 class="tittle">Bize Ulaşın</h3>
+            <p class="heading-btm-w3ls">Bilgi, Görüş veya Şikayetleriniz İçin İletişime Geçebilirsiniz</p>
+            @await Component.InvokeAsync("Address")
+            <partial name="~/Views/Default/_SendMessage.cshtml" />
+        </div>
+    </div>
+    @await Component.InvokeAsync("MapInfo")
+    <div class="bottom-social-w3ls w3ls-social-icons">
+        @await Component.InvokeAsync("SocialMedia")
+    </div>
+    <div class="copy">
+        <p>© @DateTime.Now.Year In Harvest . All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+    </div>
+    <!--/footer -->
+    <!-- js -->
+    <partial name="~/Views/Default/_ScriptPartial.cshtml" />
+
+</body>
+</html>
+
+
