@@ -4,48 +4,49 @@
     ViewData["Title"] = "Son Gelişmeler";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<span><a href="/Announcement/AddAnnouncement/" class="btn btn-outline-primary">Yeni Gelişme Ekle</a></span>
-<br />
-<div class="col-lg-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Son Gelişmeler</h4>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Görsel Adresi</th>
-                            <th>Başlık</th>
-                            <th>Tarih</th>
-                            <th>Açıklamalar</th>
-                            <th>Durumu</th>
-                            <th colspan="4">İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            int i = 1;
-                            foreach (var announcementItem in Model)
-                            {
-                                <tr>
-                                    <td>@i</td>
-                                    <td>@announcementItem.ImageUrl</td>
-                                    <td>@announcementItem.Title</td>
-                                    <td>@announcementItem.Date</td>
-                                    <td>@announcementItem.Status</td>
-                                    <td><a href="/Announcement/DeleteAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-success">Aktifleştir</a></td>
-                                    <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-dark">Pasifleştir</a></td>
-                                    <td><a href="/Announcement/UpdateAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-warning">Güncelle</a></td>
-                                </tr>
-                                i++;
+<div class="row">
+    <span><a href="/Announcement/AddAnnouncement/" class="btn btn-outline-primary">Yeni Gelişme Ekle</a></span>
+    <br />
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Son Gelişmeler</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel Adresi</th>
+                                <th>Başlık</th>
+                                <th>Tarih</th>
+                                <th>Açıklamalar</th>
+                                <th>Durumu</th>
+                                <th colspan="4">İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (var announcementItem in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@announcementItem.ImageUrl</td>
+                                        <td>@announcementItem.Title</td>
+                                        <td>@announcementItem.Date</td>
+                                        <td>@announcementItem.Status</td>
+                                        <td><a href="/Announcement/DeleteAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-success">Aktifleştir</a></td>
+                                        <td><a href="/Announcement/ChangeStatus/@announcementItem.AnnouncementId" class="btn btn-outline-dark">Pasifleştir</a></td>
+                                        <td><a href="/Announcement/UpdateAnnouncement/@announcementItem.AnnouncementId" class="btn btn-outline-warning">Güncelle</a></td>
+                                    </tr>
+                                    i++;
+                                }
                             }
-                        }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
