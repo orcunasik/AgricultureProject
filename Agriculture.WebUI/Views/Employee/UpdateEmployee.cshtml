@@ -3,65 +3,66 @@
     ViewData["Title"] = "Personel Düzenleme";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<div class="col-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Personel Güncelleme Formu</h4>
-            <form class="forms-sample" method="post">
-                <input type="hidden" asp-for="EmployeeId" />
-                <div class="form-group">
-                    <label for="employeeFirstName"><strong>Adı</strong></label>
-                    <br />
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
-                    <br />
-                    <input type="text" class="form-control" asp-for="FirstName" placeholder="Adınız">
-                </div>
-                <div class="form-group">
-                    <label for="employeeLastName"><strong>Soyadı</strong></label>
-                    <br />
-                    <span asp-validation-for="LastName" class="text-danger"></span>
-                    <br />
-                    <input type="text" class="form-control" asp-for="LastName" placeholder="Soyadınız">
-                </div>
-                <div class="form-group">
-                    <label for="employeeJob"><strong>Mesleği</strong></label>
-                    <br />
-                    <span asp-validation-for="Job" class="text-danger"></span>
-                    <br />
-                    <input type="text" class="form-control" asp-for="Job" placeholder="Mesleğiniz">
-                </div>
-                <div class="form-group">
-                    <label for="employeeAvatar"><strong>AvatarUrl</strong></label>
-                    <br />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                    <br />
-                    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Profil Resmi Ekleyiniz">
-                </div>
-                <div class="form-group">
-                    <label for="employeeLinkedinUrl"><strong>Linkedin</strong></label>
-                    <br />
-                    <input type="text" class="form-control" asp-for="LinkedinUrl" placeholder="https://linkedin.com/username">
-                </div>
-                <div class="form-group">
-                    <label for="employeeTwitterUrl"><strong>Twitter</strong></label>
-                    <br />
-                    <input type="text" class="form-control" asp-for="TwitterUrl" placeholder="https://twitter.com/username">
-                </div>
-                <div class="form-group">
-                    <label for="employeeInstagramUrl"><strong>Instagram</strong></label>
-                    <br />
-                    <input type="text" class="form-control" asp-for="InstagramUrl" placeholder="https://linkedin.com/username">
-                </div>
-                <div class="form-group">
-                    <label for="employeeFacebookUrl"><strong>Facebook</strong></label>
-                    <br />
-                    <input type="text" class="form-control" asp-for="FacebookUrl" placeholder="https://linkedin.com/username">
-                </div>
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Personel Güncelleme Formu</h4>
+                <form class="forms-sample" method="post">
+                    <input type="hidden" asp-for="EmployeeId" />
+                    <div class="form-group">
+                        <label for="employeeFirstName"><strong>Adı</strong></label>
+                        <br />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                        <br />
+                        <input type="text" class="form-control" asp-for="FirstName" placeholder="Adınız">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeLastName"><strong>Soyadı</strong></label>
+                        <br />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                        <br />
+                        <input type="text" class="form-control" asp-for="LastName" placeholder="Soyadınız">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeJob"><strong>Mesleği</strong></label>
+                        <br />
+                        <span asp-validation-for="Job" class="text-danger"></span>
+                        <br />
+                        <input type="text" class="form-control" asp-for="Job" placeholder="Mesleğiniz">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeAvatar"><strong>AvatarUrl</strong></label>
+                        <br />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        <br />
+                        <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Profil Resmi Ekleyiniz">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeLinkedinUrl"><strong>Linkedin</strong></label>
+                        <br />
+                        <input type="text" class="form-control" asp-for="LinkedinUrl" placeholder="https://linkedin.com/username">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeTwitterUrl"><strong>Twitter</strong></label>
+                        <br />
+                        <input type="text" class="form-control" asp-for="TwitterUrl" placeholder="https://twitter.com/username">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeInstagramUrl"><strong>Instagram</strong></label>
+                        <br />
+                        <input type="text" class="form-control" asp-for="InstagramUrl" placeholder="https://linkedin.com/username">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeFacebookUrl"><strong>Facebook</strong></label>
+                        <br />
+                        <input type="text" class="form-control" asp-for="FacebookUrl" placeholder="https://linkedin.com/username">
+                    </div>
 
-                <button type="submit" class="btn btn-outline-success mb-2">Güncelle</button>
-                <a href="/Employee/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
-            </form>
+                    <button type="submit" class="btn btn-outline-success mb-2">Güncelle</button>
+                    <a href="/Employee/Index/" class="btn btn-outline-danger mb-2">Listeye Dön</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
